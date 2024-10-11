@@ -1,7 +1,7 @@
 <!DOCTYPE html>
    <html>
       <head>
-         <title>OSM and Leaflet</title>
+         <title>Airborne.SG</title>
          <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -31,7 +31,10 @@
 
 
       </style>
-      <div class = "wrapper" style = "width:17vw; height:100vh; display:inline-block;">
+      <div class = "wrapper" style = "width:15vw; height:100vh; display:inline-block;">
+
+
+         <!--Side Panel on the LEFT-->
          <div class = "main">
             <!--Main Panel Content-->
             <div style = "text-align:center;">
@@ -43,7 +46,7 @@
                <div style = "display:inline-block; width:10%; vertical-align:middle;">
                   <button class = "button_Panel" id = "5km Aerodrome" onclick = "Off_Layer(id)"></button>
                </div>
-               <div style = "display:inline-block; width:85%;vertical-align: middle;">
+               <div style = "display:inline-block; width:85%;vertical-align: middle; margin-left:2px;">
                   <span style = "text-align:left; font-size:large;"><b>Areas within 5km of Aerodrome</b></span>
                </div>
             </div>
@@ -92,7 +95,19 @@
          </div>
          
       </div>
-      <div id = "map" style = "width: 80vw; height: 100vh; margin:0px; padding:0px; float:right;"></div>
+
+      <!--Main Interface on the right-->
+      <div style = "width: 80vw; height: 100vh; margin:0px; padding:0px; float:right; border-left:1px solid black;">
+         <!--Container for Search-->
+         <div style = "width:100%; height:4%;">
+            <!--Input for searching Coordinates-->
+            <input type = "text" id = "Coordinate_Search_Value" style = "height:100%; width:35%;font-size:xx-large;" placeholder = "Search Coordinate Here..."></input>
+            <input type = "submit" value = "Search" style = "height:5%; width:10%; position:absolute; margin-left:25px;font-size:x-large;" onclick = "Plot_Coordinate()"></button>
+         </div>
+
+         <!--Container for Map-->
+         <div id = "map" style = "width:100%; height:93%; bottom:0px; margin-top:15px;"></div>
+      </div>
 
 
       
